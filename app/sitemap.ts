@@ -1,5 +1,4 @@
 import type { MetadataRoute } from "next"
-
 import { PRODUCTION_HOST, isProductionHost } from "@/lib/seo/hosts"
 
 /**

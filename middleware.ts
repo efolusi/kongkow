@@ -1,5 +1,4 @@
 import { NextResponse, type NextRequest } from "next/server"
-
 import { appOrigin } from "@/lib/app-host"
 
 /**

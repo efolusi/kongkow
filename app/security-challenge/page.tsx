@@ -5,15 +5,15 @@ import { BrandMark } from "@/components/shared/brand-mark"
 export const metadata: Metadata = {
   title: "Security Challenge: Bug Bounty",
   description:
-    "Report security vulnerabilities in Kongkow. We score findings by severity and reward in SOL. General scope: platform, APIs, auth, wallet.",
+    "Report security vulnerabilities in Kongkow. We score findings by severity and reward valid ones. General scope: platform, APIs, auth and user data.",
 }
 
 const SEVERITY_ROWS = [
-  { severity: "Critical", points: 100, reward: "Up to 10 SOL" },
-  { severity: "High", points: 50, reward: "Up to 5 SOL" },
-  { severity: "Medium", points: 20, reward: "Up to 2 SOL" },
-  { severity: "Low", points: 5, reward: "Up to 0.5 SOL" },
-  { severity: "Informational", points: 1, reward: "At our discretion" },
+  { severity: "Critical", points: 100 },
+  { severity: "High", points: 50 },
+  { severity: "Medium", points: 20 },
+  { severity: "Low", points: 5 },
+  { severity: "Informational", points: 1 },
 ] as const
 
 export default function SecurityChallengePage() {
@@ -32,7 +32,7 @@ export default function SecurityChallengePage() {
               Security Challenge: Bug Bounty
             </h1>
             <p className="text-sm sm:text-base text-muted-foreground leading-relaxed break-words px-1">
-              Report security vulnerabilities in Kongkow. We score each finding by severity and pay rewards in SOL. First valid report per issue wins.
+              Report security vulnerabilities in Kongkow. We score each finding by severity and reward valid findings. First valid report per issue wins.
             </p>
           </div>
 
@@ -41,23 +41,21 @@ export default function SecurityChallengePage() {
               Scoring & rewards
             </h2>
             <p className="text-sm text-muted-foreground leading-relaxed">
-              We assign a severity tier and points; payout is based on the tier.
+              We assign a severity tier and points. The reward is decided per finding from its final severity and agreed with you before it is paid.
             </p>
             <div className="overflow-x-auto -mx-1 sm:mx-0">
               <table className="w-full min-w-[260px] border-collapse text-sm">
                 <thead>
                   <tr className="border-b border-border">
                     <th className="text-left py-2 pr-3 font-medium text-foreground">Severity</th>
-                    <th className="text-left py-2 pr-3 font-medium text-foreground">Points</th>
-                    <th className="text-left py-2 font-medium text-foreground">Reward</th>
+                    <th className="text-left py-2 font-medium text-foreground">Points</th>
                   </tr>
                 </thead>
                 <tbody className="text-muted-foreground">
                   {SEVERITY_ROWS.map((row) => (
                     <tr key={row.severity} className="border-b border-border/60">
                       <td className="py-2.5 pr-3 font-medium text-foreground">{row.severity}</td>
-                      <td className="py-2.5 pr-3">{row.points}</td>
-                      <td className="py-2.5">{row.reward}</td>
+                      <td className="py-2.5">{row.points}</td>
                     </tr>
                   ))}
                 </tbody>
@@ -71,8 +69,8 @@ export default function SecurityChallengePage() {
             </h2>
             <ul className="text-sm text-muted-foreground space-y-1.5 list-disc list-outside pl-5 leading-relaxed">
               <li>Kongkow production (kongkow.xyz) and APIs</li>
-              <li>Auth, wallet, payments, and user data</li>
-              <li>Any vulnerability affecting confidentiality, integrity, or availability of user data or funds</li>
+              <li>Auth, publishing accounts and user data</li>
+              <li>Any vulnerability affecting confidentiality, integrity, or availability of user data</li>
             </ul>
           </div>
 
@@ -93,7 +91,7 @@ export default function SecurityChallengePage() {
 
           <p className="text-center text-xs text-muted-foreground leading-relaxed break-words px-2">
             Submit to your security contact (e.g. security@kongkow.xyz). Subject:{" "}
-            <span className="font-mono text-foreground">[Bug Bounty]</span> + description. Include steps to reproduce, impact, and your Solana address. See{" "}
+            <span className="font-mono text-foreground">[Bug Bounty]</span> + description. Include steps to reproduce and the impact. See{" "}
             <Link href="/security-challenge/rules" className="font-medium text-foreground hover:underline">
               full rules
             </Link>{" "}

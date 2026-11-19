@@ -1,6 +1,6 @@
-import type { Metadata } from "next"
 import fs from "fs"
 import path from "path"
+import type { Metadata } from "next"
 import Link from "next/link"
 import ReactMarkdown from "react-markdown"
 import remarkGfm from "remark-gfm"

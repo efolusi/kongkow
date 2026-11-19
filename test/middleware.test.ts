@@ -1,6 +1,5 @@
 import { NextRequest } from "next/server"
 import { afterEach, describe, expect, it } from "vitest"
-
 import { APP_PREFIXES, config, middleware } from "../middleware"
 
 afterEach(() => {

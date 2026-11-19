@@ -1,8 +1,6 @@
 import type React from "react"
 import type { Metadata, Viewport } from "next"
-
 import "./globals.css"
-
 import { AppProviders } from "@/components/shared/app-providers"
 import { SkipLink } from "@/components/shared/skip-link"
 
