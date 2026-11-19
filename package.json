@@ -1,0 +1,55 @@
+{
+  "name": "kongkow",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "packageManager": "pnpm@11.24.0",
+  "engines": {
+    "node": "26.13.1"
+  },
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "preview": "opennextjs-cloudflare build && opennextjs-cloudflare preview",
+    "deploy": "opennextjs-cloudflare build && opennextjs-cloudflare deploy",
+    "lint": "eslint .",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run"
+  },
+  "dependencies": {
+    "@efolusi/meridian": "1.21.7",
+    "@radix-ui/react-slot": "1.2.4",
+    "class-variance-authority": "0.7.1",
+    "clsx": "2.1.1",
+    "lucide-react": "0.454.0",
+    "next": "16.3.6",
+    "react": "19.2.1",
+    "react-dom": "19.2.1",
+    "react-markdown": "10.1.0",
+    "remark-gfm": "4.0.1",
+    "tailwind-merge": "2.5.5",
+    "tailwindcss-animate": "1.0.7"
+  },
+  "devDependencies": {
+    "@next/eslint-plugin-next": "16.0.10",
+    "@opennextjs/cloudflare": "1.20.17",
+    "@tailwindcss/postcss": "4.1.18",
+    "@types/node": "22.0.0",
+    "@types/react": "19.2.7",
+    "@types/react-dom": "19.2.3",
+    "@typescript-eslint/eslint-plugin": "^8.54.0",
+    "@typescript-eslint/parser": "^8.54.0",
+    "eslint": "9.39.2",
+    "eslint-config-next": "16.0.10",
+    "eslint-plugin-import": "^2.32.0",
+    "postcss": "8.5.6",
+    "tailwindcss": "4.1.18",
+    "tw-animate-css": "1.4.0",
+    "typescript": "5.4.5",
+    "vitest": "^3.2.4",
+    "wrangler": "4.164.0"
+  },
+  "trustedDependencies": [
+    "pg-native"
+  ]
+}

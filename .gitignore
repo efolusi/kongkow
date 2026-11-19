@@ -1,0 +1,12 @@
+node_modules
+.DS_Store
+.next
+tsconfig.tsbuildinfo
+.env
+logs
+000/cuwan/posted-keys.json
+
+# OpenNext and wrangler
+.open-next/
+.wrangler/
+.dev.vars

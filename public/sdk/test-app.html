@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kongkow Test Mini App</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            background: linear-gradient(135deg, #6366f1 0%, #a855f7 100%);
+            color: white;
+            text-align: center;
+        }
+        .container {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 2rem;
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+        }
+        h1 { margin-bottom: 0.5rem; }
+        p { opacity: 0.8; margin-bottom: 2rem; }
+        button {
+            background: white;
+            color: #6366f1;
+            border: none;
+            padding: 0.8rem 1.5rem;
+            border-radius: 12px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: transform 0.2s, background 0.2s;
+            width: 100%;
+            margin-bottom: 1rem;
+        }
+        button:hover {
+            transform: scale(1.05);
+            background: #f8fafc;
+        }
+        button:active {
+            transform: scale(0.95);
+        }
+        button.secondary {
+            background: transparent;
+            color: white;
+            border: 1px solid rgba(255, 255, 255, 0.5);
+        }
+        button.secondary:hover {
+            background: rgba(255, 255, 255, 0.1);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Kongkow Mini App</h1>
+        <p>SDK Verification Test</p>
+        
+        <button onclick="sendData()">Send Data back to Bot</button>
+        <button class="secondary" onclick="closeApp()">Close Mini App</button>
+    </div>
+
+    <!-- Include the Kongkow Mini App SDK -->
+    <script src="/sdk/kongkow-miniapp.js"></script>
+    
+    <script>
+        function closeApp() {
+            console.log("Closing app...");
+            Kongkow.close();
+        }
+
+        function sendData() {
+            const data = "Hello from Mini App! " + new Date().toLocaleTimeString();
+            console.log("Sending data:", data);
+            Kongkow.sendData(data);
+            alert("Data sent! The parent window will receive this via postMessage.");
+        }
+
+        // Listen for parent signals if any
+        window.addEventListener('message', function(event) {
+            console.log("Mini App received message from parent:", event.data);
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,12 @@
+/* Layer-order guard for Tailwind v4 + Meridian.
+   Tailwind v4 emits preflight into @layer base; Meridian ships its component
+   CSS in @layer meridian. Cascade layers win by REGISTRATION ORDER, not
+   specificity, so preflight's resets (`*{border-width:0}`, `button{padding:0}`)
+   silently strip Meridian components (.ef-badge, …) whenever `meridian` happens
+   to register before `base`. Declaring the order up front — meridian LAST —
+   pins Meridian above preflight no matter how the bundler inlines @imports.
+
+   This statement MUST live in its own file imported FIRST from globals.css:
+   PostCSS/Lightning inline each @import's body above the importing file's own
+   rules, which would otherwise flip an inline order declaration. Keep it here. */
+@layer theme, base, components, utilities, meridian;
