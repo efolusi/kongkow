@@ -3,9 +3,12 @@
 The website of Kongkow: the landing page, privacy, terms, data deletion and the security challenge.
 It is a Next.js site built with OpenNext and served by the Cloudflare Worker `kongkow` (`wrangler.jsonc`).
 
-The app (publishing, schedule, settings, sign-in) lives on its own host (`NEXT_PUBLIC_APP_URL`, default
-`https://app.kongkow.xyz`). Old links to app routes on this site get a 308 to the same path there
-(`middleware.ts`), including the Meta data-deletion receipt at `/data-deletion/status`.
+The site's own origin is `https://kongkow.efolusi.com` (`NEXT_PUBLIC_SITE_URL`, `lib/seo/hosts.ts`).
+
+The app (publishing, schedule, settings, sign-in) will live on its own host, which is not decided yet
+(`lib/app-host.ts`). Until then the site links nowhere into the app, and old links to app routes,
+including the Meta data-deletion receipt at `/data-deletion/status`, get a 307 to the site home
+(`middleware.ts`).
 
 - `app/`: the pages.
 - `content/security-bug-bounty.md`: the security challenge rules.
