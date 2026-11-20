@@ -3,12 +3,13 @@ import type { Metadata, Viewport } from "next"
 import "./globals.css"
 import { AppProviders } from "@/components/shared/app-providers"
 import { SkipLink } from "@/components/shared/skip-link"
+import { siteOrigin } from "@/lib/seo/hosts"
 
 // Fonts (Figtree body / Bricolage display / JetBrains mono) ship as @font-face
 // and CSS tokens from @efolusi/meridian, imported via globals.css. No next/font.
 
 export const metadata: Metadata = {
-  metadataBase: new URL(process.env.NEXT_PUBLIC_APP_URL || "https://kongkow.xyz"),
+  metadataBase: new URL(siteOrigin()),
   title: {
     default: "Kongkow",
     template: "%s | Kongkow",

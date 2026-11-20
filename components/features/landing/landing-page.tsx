@@ -1,8 +1,7 @@
 import Image from "next/image"
 import Link from "next/link"
-import { ArrowRight, ArrowUpRight } from "lucide-react"
+import { ArrowRight } from "lucide-react"
 import { BrandMark } from "@/components/shared/brand-mark"
-import { appOrigin } from "@/lib/app-host"
 import { LandingThemeToggle } from "@/components/features/landing/landing-theme-toggle"
 
 import "./landing.css"
@@ -162,17 +161,6 @@ const FAQ: Array<{ q: string; a: string }> = [
   },
 ]
 
-function PrimaryCta({ tone = "primary" }: { tone?: "primary" | "cream" }) {
-  return (
-    <Link href={`${appOrigin()}/login`} className={`kl-btn kl-btn--arrow kl-btn--${tone}`}>
-      Sign in for free
-      <span className="kl-btn__arrow" aria-hidden>
-        <ArrowUpRight />
-      </span>
-    </Link>
-  )
-}
-
 function Shot({ name, alt, priority = false }: { name: string; alt: string; priority?: boolean }) {
   return (
     <>
@@ -214,9 +202,6 @@ export function LandingPage() {
           </nav>
           <div className="kl-actions">
             <LandingThemeToggle />
-            <Link href={`${appOrigin()}/login`} className="kl-btn kl-btn--sm kl-btn--primary">
-              Sign in
-            </Link>
           </div>
         </div>
       </header>
@@ -236,7 +221,6 @@ export function LandingPage() {
               social accounts as each connector goes live.
             </p>
             <div className="kl-hero__ctas">
-              <PrimaryCta />
               <a href="#publishing" className="kl-textlink">
                 See what&apos;s live
                 <ArrowRight aria-hidden />
@@ -418,11 +402,10 @@ export function LandingPage() {
               Start with your <span className="kl-italic">community</span>.
             </h2>
             <p>
-              Sign in with the Efolusi account you already have. There is nothing to pay, and
-              publishing connectors arrive as they are approved.
+              Sign-in opens with the Kongkow app. There is nothing to pay, and publishing
+              connectors arrive as they are approved.
             </p>
             <div className="kl-hero__ctas">
-              <PrimaryCta tone="cream" />
               <a href="mailto:hi@efolusi.com" className="kl-textlink">
                 Email us first
                 <ArrowRight aria-hidden />
@@ -448,7 +431,6 @@ export function LandingPage() {
                 <li><a className="kl-flink" href="#publishing">Publishing</a></li>
                 <li><a className="kl-flink" href="#community">Community</a></li>
                 <li><a className="kl-flink" href="#faq">FAQ</a></li>
-                <li><Link className="kl-flink" href={`${appOrigin()}/login`}>Sign in</Link></li>
               </ul>
             </div>
             <div>

@@ -68,7 +68,7 @@ export default function SecurityChallengePage() {
               In scope
             </h2>
             <ul className="text-sm text-muted-foreground space-y-1.5 list-disc list-outside pl-5 leading-relaxed">
-              <li>Kongkow production (kongkow.xyz) and APIs</li>
+              <li>Kongkow production (kongkow.efolusi.com) and its APIs</li>
               <li>Auth, publishing accounts and user data</li>
               <li>Any vulnerability affecting confidentiality, integrity, or availability of user data</li>
             </ul>
@@ -90,7 +90,7 @@ export default function SecurityChallengePage() {
           </div>
 
           <p className="text-center text-xs text-muted-foreground leading-relaxed break-words px-2">
-            Submit to your security contact (e.g. security@kongkow.xyz). Subject:{" "}
+            Email hi@efolusi.com. Subject:{" "}
             <span className="font-mono text-foreground">[Bug Bounty]</span> + description. Include steps to reproduce and the impact. See{" "}
             <Link href="/security-challenge/rules" className="font-medium text-foreground hover:underline">
               full rules
