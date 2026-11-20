@@ -9,7 +9,7 @@ afterEach(() => {
 const run = (path: string) => middleware(new NextRequest(`https://kongkow.efolusi.com${path}`))
 
 describe("app routes while the app has no host", () => {
-  it.each(["/publishing", "/scheduled/next", "/settings", "/login", "/signup", "/data-deletion/status"])(
+  it.each(["/publishing", "/scheduled/next", "/settings", "/login", "/signup"])(
     "sends %s to the site home",
     (path) => {
       const res = run(`${path}?a=1`)
@@ -23,7 +23,7 @@ describe("app routes while the app has no host", () => {
   })
 
   it("leaves site pages and look-alikes alone", () => {
-    for (const path of ["/", "/privacy", "/terms", "/data-deletion", "/security-challenge", "/settingsx"]) {
+    for (const path of ["/", "/privacy", "/terms", "/data-deletion", "/data-deletion/status", "/security-challenge", "/settingsx"]) {
       expect(run(path).headers.get("location"), path).toBeNull()
     }
   })

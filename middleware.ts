@@ -4,8 +4,8 @@ import { NextResponse, type NextRequest } from "next/server"
  * The site holds only the landing and legal pages. The app (publishing,
  * schedule, settings and the old social pages) will live on its own host, which
  * is not decided yet; until then an old link to an app route lands on the site
- * home. The Meta data-deletion receipt (/data-deletion/status) belongs to the
- * app, which holds the Meta app secret.
+ * home. The Meta data-deletion status page (/data-deletion/status) stays on the
+ * site until the app and its Meta callback exist.
  */
 export const APP_PREFIXES = [
   "/publishing",
@@ -23,7 +23,6 @@ export const APP_PREFIXES = [
   "/signup",
   "/reset-password",
   "/auth",
-  "/data-deletion/status",
 ] as const
 
 export function isAppPath(pathname: string): boolean {
@@ -71,7 +70,5 @@ export const config = {
     "/reset-password/:path*",
     "/auth",
     "/auth/:path*",
-    "/data-deletion/status",
-    "/data-deletion/status/:path*",
   ],
 }

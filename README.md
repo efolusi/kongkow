@@ -6,9 +6,9 @@ It is a Next.js site built with OpenNext and served by the Cloudflare Worker `ko
 The site's own origin is `https://kongkow.efolusi.com` (`NEXT_PUBLIC_SITE_URL`, `lib/seo/hosts.ts`).
 
 The app (publishing, schedule, settings, sign-in) will live on its own host, which is not decided yet
-(`lib/app-host.ts`). Until then the site links nowhere into the app, and old links to app routes,
-including the Meta data-deletion receipt at `/data-deletion/status`, get a 307 to the site home
-(`middleware.ts`).
+(`lib/app-host.ts`). Until then the site links nowhere into the app, and old links to app routes get a
+307 to the site home (`middleware.ts`). The Meta data-deletion status page, `/data-deletion/status?id=<code>`,
+stays on the site: Kongkow holds no Facebook, Instagram or Threads data yet.
 
 - `app/`: the pages.
 - `content/security-bug-bounty.md`: the security challenge rules.
