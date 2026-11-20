@@ -63,7 +63,7 @@ We pay after we confirm the finding and fix (or mitigate) the issue. We may cap 
 
 | Area    | What we consider in scope |
 |---------|----------------------------|
-| **Target** | Production: **https://kongkow.xyz** and its APIs. |
+| **Target** | Production: **https://kongkow.efolusi.com** and its APIs. |
 | **Auth**   | Login, signup, password reset, MFA, session handling, auth callbacks. |
 | **API**    | All `/api/*` routes: auth bypass, IDOR, injection, rate limits, privilege escalation. |
 | **Data**   | Unauthorized read or write of user data (profiles, posts, publishing accounts). |

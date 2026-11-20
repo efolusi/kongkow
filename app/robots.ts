@@ -1,8 +1,8 @@
 import type { MetadataRoute } from "next"
 import { PRODUCTION_HOST, isProductionHost } from "@/lib/seo/hosts"
 
-// Only the production host is indexable; dev/staging hosts (dev.kongkow.xyz,
-// localhost, previews) answer Disallow so they never compete with production.
+// Only the production host is indexable; every other host (local, previews)
+// answers Disallow so it never competes with production.
 export default function robots(): MetadataRoute.Robots {
   if (!isProductionHost()) {
     // No Sitemap line here: pointing a crawler at a preview's URL list is the
