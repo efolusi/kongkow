@@ -451,7 +451,7 @@ export function LandingPage() {
             </div>
           </div>
           <div className="kl-footer__bottom">
-            <p>&copy; {new Date().getFullYear()} PT Efolusi Dunia Teknologi. Site source is a Meridian reference implementation.</p>
+            <p>&copy; {new Date().getFullYear()} PT Efolusi Dunia Teknologi. All rights reserved.</p>
             <p>Made in Indonesia</p>
           </div>
         </div>
